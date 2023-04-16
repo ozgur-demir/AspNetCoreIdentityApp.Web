@@ -2,6 +2,27 @@
 @{
     ViewData["Title"] = "UserList";
 }
-
+@model List<UserViewModel>
 <h1>UserList</h1>
 
+<table class="table table-striped-columns">
+<thead>
+    <tr>
+       <th>Id</th>
+        <th>Username</th>
+        <th>Email</th>
+        <th></th>
+    </tr>
+</thead>
+<tbody>
+        @foreach (UserViewModel item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td>@item.Email</td>
+            </tr>
+        }
+    
+</tbody>
+</table>
