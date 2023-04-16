@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewData["Title"] = "SignUp";
+}
+@model SignUpViewModel
+
+<div class="col-md-6 offset-md-3">
+    <h2>Register Form</h2>
+
+    @if (TempData["SuccessMessage"] !=null)
+        {
+        <div class="alert alert-success" role="alert">@TempData["SuccessMessage"]</div>
+        }
+    <div asp-validation-summary=ModelOnly class="alert alert-danger" role="alert"></div>
+  
+    <form asp-controller="Home" asp-action="SignUp" method="post">
+      <div class="row mb-3">
+        <label for="UserName" class="col-sm-2 col-form-label" asp-for="UserName"></label>
+        <div class="col-sm-8">
+            <input asp-for="UserName" class="form-control">
+            <span class="text-danger" asp-validation-for="UserName"></span>
+        </div>
+            <div class="row mb-3">
+                <label for="Email" class="col-sm-2 col-form-label" asp-for="Email"></label>
+                <div class="col-sm-8">
+                    <input asp-for="Email" class="form-control">
+                    <span class="text-danger" asp-validation-for="Email"></span>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="PhoneNumber" class="col-sm-2 col-form-label" asp-for="PhoneNumber"></label>
+                <div class="col-sm-8">
+                    <input asp-for="PhoneNumber" class="form-control">
+                    <span class="text-danger" asp-validation-for="PhoneNumber"></span>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="Password" class="col-sm-2 col-form-label" asp-for="Password"></label>
+                <div class="col-sm-8">
+                    <input asp-for="Password" class="form-control">
+                    <span class="text-danger" asp-validation-for="Password"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="PasswordConfirm" class="col-sm-2 col-form-label" asp-for="PasswordConfirm"></label>
+                <div class="col-sm-8">
+                    <input asp-for="PasswordConfirm" class="form-control">
+                    <span class="text-danger" asp-validation-for="PasswordConfirm"></span>
+                </div>
+           </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Sign in2</button>
+</form>
+</div>
+
